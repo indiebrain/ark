@@ -23,7 +23,8 @@ defmodule Ark.NoaaApi do
     response_document = document_from_string(response_body)
     %Ark.WeatherConditions{
       location:      value_at('/current_observation/location', response_document),
-      temperature_f: value_at('/current_observation/temp_f'  , response_document)
+      temperature_f: value_at('/current_observation/temp_f'  , response_document),
+      observed_at:   value_at('/current_observation/observation_time_rfc822', response_document)
     }
   end
 

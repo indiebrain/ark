@@ -22,7 +22,8 @@ defmodule Ark.NoaaApiTest do
 
     noaa_weather_conditions = %Ark.WeatherConditions{
       location: 'Pottstown, Pottstown Limerick Airport, PA',
-      temperature_f: '35.0'
+      temperature_f: '35.0',
+      observed_at: 'Sat, 14 Nov 2015 23:54:00 -0500'
     }
     assert(parsed_response == noaa_weather_conditions)
   end

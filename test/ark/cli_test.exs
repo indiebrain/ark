@@ -30,16 +30,17 @@ defmodule Ark.CLITest do
 
 
     ====================
-    Current Weather Conditions
+    Weather Conditions at Example Location
+    Last Observation: Sat, 14 Nov 2015 23:54:00 -0500
     --------------------
-    Location: Example Location
-    Temperature(f): 72
+    Temperature (f): 72
 
 
     """
     weather_conditions = %Ark.WeatherConditions{
       location: 'Example Location',
-      temperature_f: '72'
+      temperature_f: '72',
+      observed_at: 'Sat, 14 Nov 2015 23:54:00 -0500'
     }
 
     report = capture_io(

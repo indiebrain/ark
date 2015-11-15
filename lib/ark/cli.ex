@@ -28,10 +28,10 @@ defmodule Ark.CLI do
   def print_results(weather_conditions) do
     IO.puts("\n")
     IO.puts(String.duplicate("=", 20))
-    IO.puts("Current Weather Conditions")
+    IO.puts("Weather Conditions at #{weather_conditions.location}")
+    IO.puts("Last Observation: #{weather_conditions.observed_at}")
     IO.puts(String.duplicate("-", 20))
-    IO.puts("Location: #{weather_conditions.location}")
-    IO.puts("Temperature(f): #{weather_conditions.temperature_f}")
+    IO.puts("Temperature (f): #{weather_conditions.temperature_f}")
     IO.puts("\n")
   end
 end
