@@ -1,19 +1,47 @@
 # Ark
 
-**TODO: Add description**
+A CLI client to the NOAA weather conditions XML API.
 
-## Installation
+## Dependencies
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+  - erlang-xmerl
 
-  1. Add ark to your list of dependencies in `mix.exs`:
+## Running Tests
 
-        def deps do
-          [{:ark, "~> 0.0.1"}]
-        end
+    $ mix test
 
-  2. Ensure ark is started before your application:
+## Building
 
-        def application do
-          [applications: [:ark]]
-        end
+    $ mix deps.get
+    ...
+    $ mix escript.build
+
+## Usage
+
+### In IEx
+
+    iex> Ark.CLI.run(["<airport_code>"])
+
+Example:
+
+    iex(1)> Ark.CLI.run(["KPHL"])
+
+
+    ====================
+    Weather Conditions at Philadelphia, Philadelphia International Airport, PA
+    Last Observation: Sun, 15 Nov 2015 15:54:00 -0500
+    --------------------
+    Temperature (f): 61.0
+
+
+    :ok
+
+### With Built Escript Binary
+
+    $ ./ark KPHL
+
+    ====================
+    Weather Conditions at Philadelphia, Philadelphia International Airport, PA
+    Last Observation: Sun, 15 Nov 2015 15:54:00 -0500
+    --------------------
+    Temperature (f): 61.0
